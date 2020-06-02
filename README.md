@@ -41,4 +41,4 @@ $ flutter run
 
 ## Authors
 
-* **Jonathan Sias** (github.com/JonathanSias)
+* **Jonathan Sias**
