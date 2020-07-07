@@ -13,7 +13,10 @@ class Display extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Text(text),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(text),
+            ),
           ],
         ),
       ),
