@@ -24,10 +24,16 @@ class Memory {
   }
 
   _addDigit(String digit) {
-    final wipeValue = _value == '0' || _wipeValue;
-    final currentValue = wipeValue ? '' : _value;
+    final isDot = digit == '.';
+    final wipeValue = (_value == '0' && !isDot) || _wipeValue;
+    if (isDot && _value.contains('.') && !wipeValue) {
+      return;
+    }
+    final emptyValue = isDot ? '0' : '';
+    final currentValue = wipeValue ? emptyValue : _value;
     _value = currentValue + digit;
     _wipeValue = false;
+    _buffer[_bufferIndex] = double.tryParse(_value) ?? 0;
     // _value += digit;
   }
 
